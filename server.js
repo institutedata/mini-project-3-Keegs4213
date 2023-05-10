@@ -11,13 +11,17 @@ const cors = require("cors");
 app.use(cors());
 let dbConnect = require("./dbConnect");
 
-// parse requests of content-type - application/json
 app.use(express.json());
-app.get("/", (req, res) => {
-    res.json({ message: "Connected to MongoDB app"});
-});
+// app.get("/", (req, res) => {
+//     res.json({ message: "Connected to MongoDB app"});
+// });
 
 //path to routes
+let monsterRoutes = require("./routes/monsterRoutes")
+app.use("/monsters", monsterRoutes)
+
+let userRoutes = require("./routes/userRoutes")
+app.use("/users", userRoutes)
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
