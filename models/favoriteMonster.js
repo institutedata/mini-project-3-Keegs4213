@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 //importing mongoose library and creating schema
 
-const monsterSchema = new Schema ({
-
+const favoriteMonsterSchema = new Schema ({
+    userId: {type: String, trim: true, required: true},
     id: {type: Number, trim: true, required: true},
     name: {type: String, trim: true, required: true},
     type: {type: String, trim: true, require: true},
@@ -14,4 +14,4 @@ const monsterSchema = new Schema ({
     versionKey: false 
 });
 
-module.exports = mongoose.model("monster", monsterSchema);
+module.exports = mongoose.model("favoriteMonster", favoriteMonsterSchema);

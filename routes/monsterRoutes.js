@@ -1,9 +1,9 @@
 let express = require("express");
 let router = express.Router();
-let Controllers = require("../controllers/monsterController"); //index.js
+let MonsterController = require("../controllers/monsterController"); //index.js
 
 router.get("/", (req, res) => {  // get all monsters in the database
-    Controllers.getAllMonsters(res);
+    MonsterController.getAllMonsters(res);
   });
 
   router.get("/by-user/:userId", (req, res) => {  // get all favorite monsters by userID
@@ -14,7 +14,7 @@ router.get("/", (req, res) => {  // get all monsters in the database
   });
   
   router.post("/add", (req, res) => {
-    Controllers.monsterController.addFavoriteMonster(req.body, res);
+    MonsterController.addFavoriteMonster(req.body, res);
   });
   
   router.put("/:id", (req, res) => {
