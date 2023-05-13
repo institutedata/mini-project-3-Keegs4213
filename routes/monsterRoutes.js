@@ -21,7 +21,7 @@ router.get("/", (req, res) => {  // get all monsters in the database
     MonsterController.updateFavoriteMonster(req, res);
   });
   
-  router.delete("/:id", (req, res) => {
+  router.delete("/", (req, res) => {
     MonsterController.deleteFavoriteMonster(req, res);
   });
 

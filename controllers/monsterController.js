@@ -3,6 +3,7 @@
 const axios = require("axios"); // npm i
 const Models = require("../models"); //matches index.js
 const { findById } = require("../models/user");
+const mongoose = require("mongoose")
 
 
 //Fetches all monsters
@@ -58,47 +59,30 @@ const addFavoriteMonster = async (body, res) => {
     });
 };
 
-//Update Favorite Monster to database
-const updateFavoriteMonster = async (body, res) => {
-  const { userId, monsterId } = body;
-  
-    Models.FavoriteMonster.findByIdAndUpdate(userId, monsterId, {
-      useFindAndModify: false,
-    })
-      .then((data) => res.send({ result: 200, data: data, message: "Successfully updated favorite monster" }))
-      .catch((err) => {
-        console.log(err);
-        res.send({ result: 500, error: err.message });
-      });
-  };
 
 
 // delete favorite monster from database
 const deleteFavoriteMonster = async (req, res) => {
   const { userId, monsterId } = req.body;
 
-  try {
-    const result = await Models.FavoriteMonster.findOneAndDelete({
-      userId,
-      _id: monsterId.toString(),
-    });
-
+  Models.FavoriteMonster.deleteOne({id: monsterId , userId: userId })
+  .then((response)=>{
     res.status(200).send({
       result: 200,
-      data: result,
+      data: response,
       message: "Favorite monster deleted successfully",
     });
-  } catch (err) {
-    console.log(err);
-    res.status(500).send({ result: 500, error: err.message });
-  }
+  })
+  .catch((err)=>{res.send(err)}) 
+  
 };
 
-
+//Find all user's favorites
+  // const getFavoritesByUserId =
 
 module.exports = {
     getAllMonsters,
     addFavoriteMonster,
-    updateFavoriteMonster,
-    deleteFavoriteMonster
+    deleteFavoriteMonster,
+     //getFavoritesByUserId,
 }

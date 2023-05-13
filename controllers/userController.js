@@ -15,9 +15,6 @@ const getUser = (res) => {
   };
 
 
-  //Find all user's favorites
-  // const getFavoritesByUserId =
-
 
 
   
@@ -60,7 +57,6 @@ const getUser = (res) => {
 
 module.exports = {
     getUser,
-    //getFavoritesByUserId,
     addUser,
     updateUser,
     deleteUser
