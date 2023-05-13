@@ -18,11 +18,11 @@ router.get("/", (req, res) => {  // get all monsters in the database
   });
   
   router.put("/:id", (req, res) => {
-    Controllers.monsterController.updateFavoriteMonster(req, res);
+    MonsterController.updateFavoriteMonster(req, res);
   });
   
   router.delete("/:id", (req, res) => {
-    Controllers.monsterController.deleteFavoriteMonster(req, res);
+    MonsterController.deleteFavoriteMonster(req, res);
   });
 
 module.exports = router;

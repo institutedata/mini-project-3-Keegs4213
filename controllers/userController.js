@@ -5,7 +5,6 @@ const Models = require("../models"); //matches index.js
 
 
 const getUser = (res) => {
-
     //finds all users
     Models.User.find({})
       .then((data) => res.send({ result: 200, data: data }))
@@ -14,6 +13,13 @@ const getUser = (res) => {
         res.send({ result: 500, error: err.message });
       });
   };
+
+
+  //Find all user's favorites
+  // const getFavoritesByUserId =
+
+
+
   
   const addUser = (data, res) => {
     //creates a new user using JSON data POSTed in request body
@@ -54,6 +60,7 @@ const getUser = (res) => {
 
 module.exports = {
     getUser,
+    //getFavoritesByUserId,
     addUser,
     updateUser,
     deleteUser

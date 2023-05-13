@@ -31,3 +31,14 @@ Routes
 Link to Users
 Favourite Monster
 Favourite Weapons, Armour
+
+
+
+
+Favorite Equipment
+
+Recall favorites
+CRUD favorites
+
+
+Swagger
