@@ -61,10 +61,39 @@ const addFavoriteWeapon = async (body, res) => {
   };
 
   
+// delete favorite weapon from database
+const deleteFavoriteWeapon = async (req, res) => {
+    const { userId, weaponId } = req.body;
+  
+    Models.FavoriteWeapon.deleteOne({id: weaponId , userId: userId })
+    .then((response)=>{
+      res.status(200).send({
+        result: 200,
+        data: response,
+        message: "Favorite weapon deleted successfully",
+      });
+    })
+    .catch((err)=>{res.send(err)}) 
+  };
+
+  //Find all user's favorite weapons
+  const getFavoriteWeaponsByUserId = async (userId, res) => {
+
+    Models.FavoriteWeapon.find({userId: userId})
+    .then((response)=>{
+      res.status(200).send({
+        result: 200,
+        data: response,
+        message: "User's favorite weapon(s) retrieved successfully",
+      });
+    })
+      }
+    
+
 
   module.exports = {
     getAllWeapons,
     addFavoriteWeapon,
-    // deleteFavoriteMonster,
-    //  getFavoritesByUserId,
+    deleteFavoriteWeapon,
+     getFavoriteWeaponsByUserId,
 }

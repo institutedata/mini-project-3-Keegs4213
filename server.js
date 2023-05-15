@@ -12,9 +12,9 @@ app.use(cors());
 let dbConnect = require("./dbConnect");
 
 app.use(express.json());
-// app.get("/", (req, res) => {
-//     res.json({ message: "Connected to MongoDB app"});
-// });
+app.get("/", (req, res) => {
+    res.json({ message: "Connected to MongoDB app"});
+});
 
 //path to routes
 let monsterRoutes = require("./routes/monsterRoutes")

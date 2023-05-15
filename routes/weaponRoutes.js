@@ -2,15 +2,15 @@ let express = require("express");
 let router = express.Router();
 let WeaponController = require("../controllers/weaponController"); //index.js
 
-router.get("/", (req, res) => {  // get all monsters in the database
+router.get("/", (req, res) => {  // get all weapons in the database
     WeaponController.getAllWeapons(res);
   });
 
-  router.get("/by-user/:userId", (req, res) => {  // get all favorite monsters by userID
+  router.get("/by-user/:userId", (req, res) => {  // get all favorite weapons by userID
 
     let userId = req.params.userId
 
-    WeaponController.getFavoritesByUserId(userId, res);
+    WeaponController.getFavoriteWeaponsByUserId(userId, res);
   });
   
   router.post("/add", (req, res) => {

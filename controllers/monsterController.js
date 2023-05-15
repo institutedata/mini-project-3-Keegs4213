@@ -77,7 +77,7 @@ const deleteFavoriteMonster = async (req, res) => {
 };
 
 //Find all user's favorites
-  const getFavoritesByUserId = async (userId, res) => {
+  const getFavoriteMonsterByUserId = async (userId, res) => {
 
 Models.FavoriteMonster.find({userId: userId})
 .then((response)=>{
@@ -94,5 +94,5 @@ module.exports = {
     getAllMonsters,
     addFavoriteMonster,
     deleteFavoriteMonster,
-     getFavoritesByUserId,
+     getFavoriteMonsterByUserId,
 }
