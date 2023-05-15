@@ -1,5 +1,6 @@
 module.exports = {
     monsterController: require("./monsterController"),
-    userController: require("./userController")
+    userController: require("./userController"),
+    weaponController: require("./weaponController")
   };
   
