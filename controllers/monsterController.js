@@ -78,11 +78,22 @@ const deleteFavoriteMonster = async (req, res) => {
 };
 
 //Find all user's favorites
-  // const getFavoritesByUserId =
+  const getFavoritesByUserId = async (userId, res) => {
+
+Models.FavoriteMonster.find({userId: userId})
+.then((response)=>{
+  res.status(200).send({
+    result: 200,
+    data: response,
+    message: "User's favorite monster(s) retrieved successfully",
+  });
+})
+  }
+
 
 module.exports = {
     getAllMonsters,
     addFavoriteMonster,
     deleteFavoriteMonster,
-     //getFavoritesByUserId,
+     getFavoritesByUserId,
 }

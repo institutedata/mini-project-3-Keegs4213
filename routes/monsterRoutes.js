@@ -8,9 +8,9 @@ router.get("/", (req, res) => {  // get all monsters in the database
 
   router.get("/by-user/:userId", (req, res) => {  // get all favorite monsters by userID
 
-    let userID = req.params.userId
+    let userId = req.params.userId
 
-    Controllers.getMonstersByUserID(userId, res);
+    MonsterController.getFavoritesByUserId(userId, res);
   });
   
   router.post("/add", (req, res) => {
