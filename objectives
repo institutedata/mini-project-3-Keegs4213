@@ -4,16 +4,11 @@ https://mhw-db.com/monsters
 Docs
 https://docs.mhw-db.com/#introduction
 
-CRUD
-Create new monsters
-Read monsters
-Update monsters
-Delete monsters
-
-CRUD weapons
-
+CRUD users
 User profiles: allow users to create profiles on your app and save
-information such as their favorite weaponsand monsters.
+information such as their favorite weapons and monsters.
+
+CRUD favorite monsters + weapons
 
 Add favorites
 
