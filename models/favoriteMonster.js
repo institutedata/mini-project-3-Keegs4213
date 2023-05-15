@@ -9,7 +9,6 @@ const favoriteMonsterSchema = new Schema ({
     type: {type: String, trim: true, require: true},
     species: {type: String, trim: true, require: true},
     description: {type: String, trim: true, require: true},
-    elements: {type: Array, trim: true, require: true},
 },{
     versionKey: false 
 });

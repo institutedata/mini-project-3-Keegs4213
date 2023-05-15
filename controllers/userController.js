@@ -14,10 +14,6 @@ const getUser = (res) => {
       });
   };
 
-
-
-
-  
   const addUser = (data, res) => {
     //creates a new user using JSON data POSTed in request body
 

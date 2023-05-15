@@ -1,5 +1,5 @@
 MINI-PROJECT 3 - Project objectives
-Monster Hunter World API 
+Monster Hunter World API
 https://mhw-db.com/monsters
 Docs
 https://docs.mhw-db.com/#introduction
@@ -7,21 +7,16 @@ https://docs.mhw-db.com/#introduction
 CRUD
 Create new monsters
 Read monsters
-Update monsters 
+Update monsters
 Delete monsters
 
 CRUD weapons
 
-CRUD armour
+User profiles: allow users to create profiles on your app and save
+information such as their favorite weaponsand monsters.
 
-CRUD skills
+Add favorites
 
+Retrieve favorites by user Id
 
-User profiles:  allow users to create profiles on your app and save
- information such as their favorite weapons, armor sets, and monsters.
-
- Save/load builds:  allow users to save their favorite builds (weapon, armor, skills) and load them at a later time. 
- This could also tie into user profiles, allowing users to share their builds with others.
-
-
-
+Delete favorites
