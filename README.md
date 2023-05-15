@@ -54,17 +54,17 @@ User's are able to create a user profile consisting of a simple username and pas
 
 </br>
 </br>
-▪ Where does its data come from (external/internal APIs)?
+▪ Where does its data come from (external/internal APIs)?</br>
 External API - https://docs.mhw-db.com/
 </br>
 </br>
 
-▪ How does the back end process this data?
+▪ How does the back end process this data?</br>
 Fetch from API, add/remove from database and tag a user Id in the database.
 
 </br>
 </br>
-▪ How can the user interact with this data?
+▪ How can the user interact with this data?</br>
 User's are able to create a user profile consisting of a simple username and password. They are able create, read, update, delete their user. Also they can add their favorite monsters and weapons from the Monster hunter game to their profile, delete their favorites and fetch a users favorites.
 </br>
 </br>
