@@ -43,44 +43,48 @@ Create a backend that does something useful with a chosen 3rd party API(s) and i
 ## Ideas to talk about in the presentation
 
 ▪ What was your requirements gathering and design process? Was it useful/successful?
-
+</br>
 My process started with finding an API I wanted to work with, I chose Monster Hunter because the docs seemed straight forward and I liked all of the attributes that I could use with the monsters + weapons. I had to brainstorm what I could do with an app and what functions it could perform in the backend, I was able to bounce some ideas off of Lee.
 
 </br>
 
 ▪ Give a high level overview of your application and its features.
-
+</br>
 User's are able to create a user profile consisting of a simple username and password. They are able create, read, update, delete their user. Also they can add their favorite monsters and weapons from the Monster hunter game to their profile, delete their favorites and fetch a users favorites.
 
 </br>
-
+</br>
 ▪ Where does its data come from (external/internal APIs)?
 External API - https://docs.mhw-db.com/
-
+</br>
 </br>
 
 ▪ How does the back end process this data?
 Fetch from API, add/remove from database and tag a user Id in the database.
 
 </br>
-
+</br>
 ▪ How can the user interact with this data?
 User's are able to create a user profile consisting of a simple username and password. They are able create, read, update, delete their user. Also they can add their favorite monsters and weapons from the Monster hunter game to their profile, delete their favorites and fetch a users favorites.
-
+</br>
 </br>
 
 ▪ What JS techniques have you used ?
 _(eg. objects/arrays/DOMfunctions/loops/functions/ifs)_
+</br>
+</br>
 objects/arrays/DOMfunctions/loops/try+catch/functions/
 </br>
-
+</br>
 ▪ What external tools/libraries have you used? How? Why?
 _(eg. bootstrap/axios/charts)_
+
+</br>
 Mongoose + MongoDB
 </br>
-
+</br>
 ▪ How might you extend the features of your application in future?
 
 Add a front end and additional features such as sharing user profiles, adding guides + strategies how to beat monsters
-
+</br>
 </br></br></br></br></br>
