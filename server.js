@@ -23,6 +23,9 @@ app.use("/monsters", monsterRoutes)
 let userRoutes = require("./routes/userRoutes")
 app.use("/users", userRoutes)
 
+let weaponRoutes = require("./routes/weaponRoutes")
+app.use("/weapons", weaponRoutes)
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

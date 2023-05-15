@@ -1,24 +1,25 @@
 let express = require("express");
 let router = express.Router();
-let MonsterController = require("../controllers/monsterController"); //index.js
+let WeaponController = require("../controllers/weaponController"); //index.js
 
 router.get("/", (req, res) => {  // get all monsters in the database
-    MonsterController.getAllMonsters(res);
+    WeaponController.getAllWeapons(res);
   });
 
   router.get("/by-user/:userId", (req, res) => {  // get all favorite monsters by userID
 
     let userId = req.params.userId
 
-    MonsterController.getFavoritesByUserId(userId, res);
+    WeaponController.getFavoritesByUserId(userId, res);
   });
   
   router.post("/add", (req, res) => {
-    MonsterController.addFavoriteMonster(req.body, res);
+    WeaponController.addFavoriteWeapon(req.body, res);
   });
   
+  
   router.delete("/", (req, res) => {
-    MonsterController.deleteFavoriteMonster(req, res);
+    WeaponController.deleteFavoriteWeapon(req, res);
   });
 
 module.exports = router;

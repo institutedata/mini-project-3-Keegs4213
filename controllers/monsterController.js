@@ -2,8 +2,7 @@
 
 const axios = require("axios"); // npm i
 const Models = require("../models"); //matches index.js
-const { findById } = require("../models/user");
-const mongoose = require("mongoose")
+
 
 
 //Fetches all monsters
