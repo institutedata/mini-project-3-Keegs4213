@@ -7,13 +7,14 @@
 
 <div align="center">
 
-# *the BACKEND*
+# _the BACKEND_
 
 </div>
 
 </br>
 
-## Objective  
+## Objective
+
 Create a backend that does something useful with a chosen 3rd party API(s) and includes a database
 
 <br>
@@ -27,7 +28,7 @@ Create a backend that does something useful with a chosen 3rd party API(s) and i
 ## Build steps:
 
 1. Follow the link to the Github Classroom repo and clone it to your local PC
-(Inside the repo)
+   (Inside the repo)
 2. Create a new backend express app
 3. Connect it to a database (MySQL or MongoDB. You choose)
 4. Create routes to perform the required operations. (Make sure you use all CRUD operations at least once!)
@@ -43,39 +44,43 @@ Create a backend that does something useful with a chosen 3rd party API(s) and i
 
 ▪ What was your requirements gathering and design process? Was it useful/successful?
 
+My process started with finding an API I wanted to work with, I chose Monster Hunter because the docs seemed straight forward and I liked all of the attributes that I could use with the monsters + weapons. I had to brainstorm what I could do with an app and what functions it could perform in the backend, I was able to bounce some ideas off of Lee.
+
 </br>
 
 ▪ Give a high level overview of your application and its features.
 
+User's are able to create a user profile consisting of a simple username and password. They are able create, read, update, delete their user. Also they can add their favorite monsters and weapons from the Monster hunter game to their profile, delete their favorites and fetch a users favorites.
+
 </br>
 
 ▪ Where does its data come from (external/internal APIs)?
+External API - https://docs.mhw-db.com/
 
 </br>
 
 ▪ How does the back end process this data?
+Fetch from API, add/remove from database and tag a user Id in the database.
 
 </br>
 
 ▪ How can the user interact with this data?
+User's are able to create a user profile consisting of a simple username and password. They are able create, read, update, delete their user. Also they can add their favorite monsters and weapons from the Monster hunter game to their profile, delete their favorites and fetch a users favorites.
 
 </br>
 
 ▪ What JS techniques have you used ?
-*(eg. objects/arrays/DOMfunctions/loops/functions/ifs)*
-
+_(eg. objects/arrays/DOMfunctions/loops/functions/ifs)_
+objects/arrays/DOMfunctions/loops/try+catch/functions/
 </br>
 
 ▪ What external tools/libraries have you used? How? Why?
-*(eg. bootstrap/axios/charts)*
-
+_(eg. bootstrap/axios/charts)_
+Mongoose + MongoDB
 </br>
-
 
 ▪ How might you extend the features of your application in future?
 
-
+Add a front end and additional features such as sharing user profiles, adding guides + strategies how to beat monsters
 
 </br></br></br></br></br>
-
-
