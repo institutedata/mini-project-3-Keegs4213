@@ -1,0 +1,279 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My Monster Hunter Backend",
+    "description": "My User Project Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Monster Hunter",
+      "description": "API for Monster Hunter World game"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Fetch all users",
+        "responses": {
+          "200": {
+            "description": "This service allows you to fetch all users from the database"
+          }
+        }
+      }
+    },
+    "/users/add": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Add a user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "description": "User details",
+            "schema": {
+              "$ref": "#definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to create a user profile in the database"
+          }
+        }
+      }
+    },
+    "users/update/:id": {
+      "put": {
+        "tags": ["Users"],
+        "summary": "Update a user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "description": "User details",
+            "schema": {
+              "$ref": "#definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to update a user profile in the database"
+          }
+        }
+      }
+    },
+    "users/delete/:id": {
+      "delete": {
+        "tags": ["Users"],
+        "summary": "Delete a user",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "description": "User details",
+            "schema": {
+              "$ref": "#definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to delete a user profile in the database"
+          }
+        }
+      }
+    },
+    "/monsters": {
+      "get": {
+        "tags": ["Monsters"],
+        "summary": "Fetch all monsters from API",
+        "responses": {
+          "200": {
+            "description": "This service allows you to fetch all monsters from the API"
+          }
+        }
+      }
+    },
+    "/monsters/add": {
+      "post": {
+        "tags": ["Monsters"],
+        "summary": "Add favorite monster to user profile",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Monster and user id",
+            "schema": {
+              "$ref": "#definitions/Monster"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to add a favorite monster to your user profile"
+          }
+        }
+      }
+    },
+    "/monsters/delete": {
+      "delete": {
+        "tags": ["Monsters"],
+        "summary": "Remove favorite monster from user profile",
+        "parameters": [
+          {
+            "name": "json",
+            "in": "body",
+            "description": "Monster and user id",
+            "schema": {
+              "$ref": "#definitions/Monster"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This service allows you to remove a favorite monster from your user profile"
+          }
+        }
+      }
+    },
+    "/monsters/by-user/{userId}": {
+        "get": {
+          "tags": ["Monsters"],
+          "summary": "Fetch user's favorite monsters",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "description": "User id"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "This service allows you to search a user's favorite monsters by user id"
+            }
+          }
+        }
+      },
+      "/weapons": {
+        "get": {
+          "tags": ["Weapons"],
+          "summary": "Fetch all weapons from API",
+          "responses": {
+            "200": {
+              "description": "This service allows you to fetch all weapons from the API"
+            }
+          }
+        }
+      },
+      "/weapons/add": {
+        "post": {
+          "tags": ["Weapons"],
+          "summary": "Add favorite weapon to user profile",
+          "parameters": [
+            {
+              "name": "json",
+              "in": "body",
+              "description": "Weapon and user id",
+              "schema": {
+                "$ref": "#definitions/Weapon"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "This service allows you to add a favorite weapon to your user profile"
+            }
+          }
+        }
+      },
+      "/weapons/delete": {
+        "delete": {
+          "tags": ["Weapons"],
+          "summary": "Remove favorite weapon from user profile",
+          "parameters": [
+            {
+              "name": "json",
+              "in": "body",
+              "description": "Weapon and user id",
+              "schema": {
+                "$ref": "#definitions/Weapon"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "This service allows you to remove a favorite weapon from your user profile"
+            }
+          }
+        }
+      },
+      "/weapons/by-user/{userId}": {
+        "get": {
+          "tags": ["Weapons"],
+          "summary": "Fetch user's favorite weapon",
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "description": "User id"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "This service allows you to search a user's favorite weapon by user id"
+            }
+          }
+        }
+      }
+  },
+  
+
+
+  "definitions": {
+    "User": {
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Monster": {
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "monsterId": {
+          "type": "number"
+        }
+      }
+    },
+    "Weapon": {
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "weaponId": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
