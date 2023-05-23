@@ -53,19 +53,22 @@
         }
       }
     },
-    "users/update/:id": {
+    "/users/update/{userId}": {
       "put": {
         "tags": ["Users"],
         "summary": "Update a user",
         "parameters": [
           {
-            "name": "id",
+            "name": "User details",
             "in": "body",
             "description": "User details",
             "schema": {
               "$ref": "#definitions/User"
             }
-          }
+          },
+          {"name": "User id",
+          "in": "path",
+          "description": "User details"}
         ],
         "responses": {
           "200": {
@@ -74,18 +77,15 @@
         }
       }
     },
-    "users/delete/:id": {
+    "/users/delete/{userId}": {
       "delete": {
         "tags": ["Users"],
         "summary": "Delete a user",
         "parameters": [
           {
-            "name": "id",
-            "in": "body",
-            "description": "User details",
-            "schema": {
-              "$ref": "#definitions/User"
-            }
+            "name": "_id",
+            "in": "path",
+            "description": "User id"
           }
         ],
         "responses": {

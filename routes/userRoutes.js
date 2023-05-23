@@ -11,11 +11,11 @@ router.get("/", (req, res) => {
     userControllers.addUser(req.body, res);
   });
   
-  router.put("/:id", (req, res) => {
+  router.put("/update/:id", (req, res) => {
     userControllers.updateUser(req, res);
   });
   
-  router.delete("/:id", (req, res) => {
+  router.delete("/delete/:id", (req, res) => {
     userControllers.deleteUser(req, res);
   });
 

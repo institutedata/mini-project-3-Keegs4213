@@ -8,23 +8,27 @@ const app = express();
 require("dotenv").config();
 const cors = require("cors");
 
+const swaggerUi = require("swagger-ui-express");
+swaggerDocument = require("./swagger.json");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use(cors());
 let dbConnect = require("./dbConnect");
 
 app.use(express.json());
 app.get("/", (req, res) => {
-    res.json({ message: "Connected to MongoDB app"});
+  res.json({ message: "Connected to MongoDB app" });
 });
 
 //path to routes
-let monsterRoutes = require("./routes/monsterRoutes")
-app.use("/monsters", monsterRoutes)
+let monsterRoutes = require("./routes/monsterRoutes");
+app.use("/monsters", monsterRoutes);
 
-let userRoutes = require("./routes/userRoutes")
-app.use("/users", userRoutes)
+let userRoutes = require("./routes/userRoutes");
+app.use("/users", userRoutes);
 
-let weaponRoutes = require("./routes/weaponRoutes")
-app.use("/weapons", weaponRoutes)
+let weaponRoutes = require("./routes/weaponRoutes");
+app.use("/weapons", weaponRoutes);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
