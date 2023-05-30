@@ -30,7 +30,7 @@ const getUser = (res) => {
   const updateUser = (req, res) => {
     //updates the user matching the ID from the param using JSON data POSTed in request body
     console.log(req.body);
-    Models.User.findByIdAndUpdate(req.params.id, req.body, {
+    Models.User.findByIdAndUpdate(req.params.userId, req.body, {
       useFindAndModify: false,
     })
       .then((data) => res.send({ result: 200, data: data }))
@@ -41,7 +41,7 @@ const getUser = (res) => {
   };
   const deleteUser = (req, res) => {
     //deletes the user matching the ID from the param
-    Models.User.findByIdAndRemove(req.params.id, req.body, {
+    Models.User.findByIdAndRemove(req.params.userId, req.body, {
       useFindAndModify: false,
     })
       .then((data) => res.send({ result: 200, data: data }))
