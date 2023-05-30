@@ -53,7 +53,7 @@
         }
       }
     },
-    "/users/update/{userId}": {
+    "/users/update/{_id}": {
       "put": {
         "tags": ["Users"],
         "summary": "Update a user",
@@ -77,7 +77,7 @@
         }
       }
     },
-    "/users/delete/{userId}": {
+    "/users/delete/{_id}": {
       "delete": {
         "tags": ["Users"],
         "summary": "Delete a user",
