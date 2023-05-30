@@ -13,9 +13,7 @@ router.get("/", (req, res) => {  // get all monsters in the database
     MonsterController.getFavoriteMonsterByUserId(userId, res);
   });
   
-  router.post("/add", (req, res) => {
-    MonsterController.addFavoriteMonster(req.body, res);
-  });
+  router.post("/add", MonsterController.addFavoriteMonster);
   
   router.delete("/delete", (req, res) => {
     MonsterController.deleteFavoriteMonster(req, res);
