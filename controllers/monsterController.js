@@ -1,3 +1,4 @@
+
 "use strict";
 
 const axios = require("axios"); // npm i
@@ -8,6 +9,7 @@ const getAllMonsters = (res) => {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
+    
     url: "https://mhw-db.com/monsters",
     headers: {},
   };
@@ -26,6 +28,7 @@ const getAllMonsters = (res) => {
 const addFavoriteMonster = async (req, res) => {
   const { id, userId } = req.body;
 
+
   let config = {
     method: "get",
     maxBodyLength: Infinity,
@@ -38,10 +41,11 @@ const addFavoriteMonster = async (req, res) => {
     .request(config)
     .then((response) => {
       return response.data;
+
     })
     .catch((error) => {
-      console.log(error);
-    });
+      console.log(error)
+    })
 
   // Step 2 - modify monster to include userId
   monster.userId = userId;
@@ -64,13 +68,14 @@ const addFavoriteMonster = async (req, res) => {
 
 // delete favorite monster from database
 const deleteFavoriteMonster = async (req, res) => {
-  const { userId, monsterId } = req.body;
+  const { userId, monsterId } = req.body
 
   Models.FavoriteMonster.deleteOne({ id: monsterId, userId: userId })
     .then((response) => {
       res.status(200).send({
         result: 200,
         data: response,
+
         message: "Favorite monster deleted successfully",
       });
     })
@@ -86,6 +91,7 @@ const getFavoriteMonsterByUserId = async (userId, res) => {
       result: 200,
       data: response,
       message: "User's favorite monster(s) retrieved successfully",
+
     });
   });
 };
@@ -95,4 +101,5 @@ module.exports = {
   addFavoriteMonster,
   deleteFavoriteMonster,
   getFavoriteMonsterByUserId,
+
 };
