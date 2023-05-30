@@ -12,8 +12,14 @@ router.get('/by-user/:userId', (req, res) => {
 
   let userId = req.params.userId
 
-  MonsterController.getFavoriteMonsterByUserId(userId, res)
-})
+    MonsterController.getFavoriteMonsterByUserId(userId, res);
+  });
+  
+  router.post("/add", MonsterController.addFavoriteMonster);
+  
+  router.delete("/delete", (req, res) => {
+    MonsterController.deleteFavoriteMonster(req, res);
+  });
 
 router.post('/add', MonsterController.addFavoriteMonster)
 

@@ -63,7 +63,7 @@
         }
       }
     },
-    "/users/update/{userId}": {
+    "/users/update/{_id}": {
       "put": {
         "tags": [
           "Users"
@@ -78,11 +78,9 @@
               "$ref": "#definitions/User"
             }
           },
-          {
-            "name": "User id",
-            "in": "path",
-            "description": "User details"
-          }
+
+          { "name": "_id", "in": "path", "description": "User details" }
+
         ],
         "responses": {
           "200": {
@@ -91,7 +89,7 @@
         }
       }
     },
-    "/users/delete/{userId}": {
+    "/users/delete/{_id}": {
       "delete": {
         "tags": [
           "Users"
@@ -172,9 +170,7 @@
     },
     "/monsters/by-user/{userId}": {
       "get": {
-        "tags": [
-          "Monsters"
-        ],
+        "tags": ["Monsters"],
         "summary": "Fetch user's favorite monsters",
         "parameters": [
           {
@@ -192,9 +188,7 @@
     },
     "/weapons": {
       "get": {
-        "tags": [
-          "Weapons"
-        ],
+        "tags": ["Weapons"],
         "summary": "Fetch all weapons from API",
         "responses": {
           "200": {
@@ -205,9 +199,7 @@
     },
     "/weapons/add": {
       "post": {
-        "tags": [
-          "Weapons"
-        ],
+        "tags": ["Weapons"],
         "summary": "Add favorite weapon to user profile",
         "parameters": [
           {
@@ -228,9 +220,7 @@
     },
     "/weapons/delete": {
       "delete": {
-        "tags": [
-          "Weapons"
-        ],
+        "tags": ["Weapons"],
         "summary": "Remove favorite weapon from user profile",
         "parameters": [
           {
@@ -251,9 +241,7 @@
     },
     "/weapons/by-user/{userId}": {
       "get": {
-        "tags": [
-          "Weapons"
-        ],
+        "tags": ["Weapons"],
         "summary": "Fetch user's favorite weapon",
         "parameters": [
           {
